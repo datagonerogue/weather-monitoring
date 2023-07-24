@@ -1,6 +1,6 @@
-# Python Weather Forecast Visualization
+# Python Weather Forecast Visualization ***IN DEVELOPMENT***
 
-![Weather Forecast Visualization]
+<!-- ![Weather Forecast Visualization](example image here) -->
 
 This Python-based weather forecast visualization project aims to provide interactive plots showcasing temperature, precipitation, and wind patterns using the popular Matplotlib library. By leveraging this tool, users can gain insights into the weather forecast data with ease.
 
@@ -23,8 +23,8 @@ To get started with the weather forecast visualization project, follow the steps
 1. Clone the repository:
 
 ```
-git clone https://github.com/your-username/weather-forecast-visualization.git
-cd weather-forecast-visualization
+git clone https://github.com/CTM-Giorno/forecast-visualizer.git
+cd forecast-visualizer
 ```
 
 2. Set up a virtual environment (optional but recommended):
@@ -45,8 +45,7 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-4. Obtain weather forecast data (e.g., through an API) and store it in a suitable format (e.g., CSV, JSON) in the project's data directory.
-
+4. Obtain a weather data API. (Ex. [OpenWeather APIs.](https://openweathermap.org/api))
 ## Usage
 
 Once the project is set up and you have acquired the weather forecast data, follow these steps to visualize the weather patterns:
@@ -54,12 +53,12 @@ Once the project is set up and you have acquired the weather forecast data, foll
 1. Run the main Python script:
 
 ```
-python weather_visualization.py
+python api_to_dataframe.py
 ```
 
-2. The script will prompt you to input the file name or path containing the weather forecast data.
-
-3. After processing the data, the interactive plots will be generated using Matplotlib, showcasing temperature, precipitation, and wind patterns.
+2. The script will prompt you to input the API key and Location for the forcast.
+    
+3. After processing the data, the interactive plots will be generated using Matplotlib, showcasing the temperatures of the previous weeks.
 
 4. Explore the plots using the provided interactive features, such as zooming, panning, and hover tooltips.
 
@@ -68,6 +67,8 @@ python weather_visualization.py
 - **Interactive Visualization**: The project offers interactive plots, allowing users to explore weather forecast data conveniently.
 
 - **Temperature Plot**: Visualize temperature patterns over time, helping users understand temperature fluctuations.
+
+### Upcomimng Features
 
 - **Precipitation Plot**: Understand precipitation levels and patterns with an easy-to-read precipitation plot.
 
