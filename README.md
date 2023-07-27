@@ -46,7 +46,7 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-4. Obtain a weather data API. (Ex. [OpenWeather APIs.](https://openweathermap.org/api))
+4. Obtain an openweather data API key. (Ex. [OpenWeather APIs.](https://openweathermap.org/api))
 ## Usage
 
 Once the project is set up and you have acquired the weather forecast data, follow these steps to visualize the weather patterns:
@@ -59,9 +59,9 @@ python api_to_dataframe.py
 
 2. The script will prompt you to input the API key and Location for the forcast.
     
-3. After processing the data, the interactive plots will be generated using Matplotlib, showcasing the temperatures of the previous weeks.
+3. After processing the data from the open weather, the data will be displayed to you on the terminal. Also, The data will be saved on a .csv gile while on the working directory.
 
-4. Explore the plots using the provided interactive features, such as zooming, panning, and hover tooltips.
+4. The code will pause for a day. After 24 Hours it will ping the API again (no need for any input) repeat the step 3.
 
 ## Features
 
