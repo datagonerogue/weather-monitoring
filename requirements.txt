@@ -2,4 +2,3 @@ numpy
 matplotlib
 requests
 pandas
-jinja2
