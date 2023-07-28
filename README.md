@@ -56,12 +56,10 @@ Once the project is set up and you have acquired the weather forecast data, foll
 ```
 python api_to_dataframe.py [YOUR_API_KEY] [LOCATION] [NUMBER_OF_DAYS]
 ```
-
-2. The script will prompt you to input the API key and Location for the forcast.
     
-3. After processing the data from the open weather, the data will be displayed to you on the terminal. Also, The data will be saved on a .csv gile while on the working directory.
+2. After processing the data from the open weather, The data will be saved on a .csv gile while on the working directory.
 
-4. The code will pause for a day. After 24 Hours it will ping the API again (no need for any input) repeat the step 3.
+3. The code will pause for a day. After 24 Hours it will ping the API again and repeat the step 3.
 
 ## Features
 
