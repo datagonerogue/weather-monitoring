@@ -2,6 +2,8 @@ import requests
 from datetime import date
 import pandas as pd
 import time
+from jinja2 import Environment, FileSystemLoader
+
 
 
 def get_weather(api_key,city_name): 
@@ -50,9 +52,16 @@ if __name__ == "__main__":
     # Taking Input of the API and the City.
     days = int(input("Enter the number of days you want to collect daily data for: "))
     api_key, city_name = input("Enter the API key and the name of the city (seperated by a space): ").split()
-    print("Getting the Initial Response...")
+    # Create the Jinja2 environment
+    env = Environment(loader=FileSystemLoader('.'))
+    template = env.get_template('dataframe_template.html')
 
-    for _ in range(days):
+    for day in range(days):
+        if day == 0:
+            print("Initiating API Request")
+        else:
+            print(f"Fetching data for day {day}")
+
         # Getting Raw Data of the API Response.
         raw_data=get_weather(api_key,city_name)
 
@@ -61,15 +70,27 @@ if __name__ == "__main__":
 
         # Generating a DataFrame.
         dataframe = gen_df(current_date,temp_list, weather_list, humidity_list, wind_speed_list)
+
+        # Reindex the DataFrame with the desired columns order
         desired_columns = ['Time', 'Temperature', 'Weather', 'Humidity', 'Wind Speed']
+        dataframe = dataframe.reindex(columns=desired_columns)
 
-        # Generating a CSV File
-        dataframe.to_csv(f'weather_info{current_date}.csv', index=False)
-        print(f'''
-        --------------------------------------------------------
-        {dataframe}
-        --------------------------------------------------------
-        ''')
+        # Format the DataFrame to HTML using Jinja2
+        dataframe_html = dataframe.to_html(classes='data', escape=False, index=False)
 
+        # Render the template with the DataFrame HTML
+        output_html = template.render(dataframe=dataframe_html)
+
+        # Save the styled DataFrame to an HTML file
+        output_file_path = f'weather_info_{city_name}_{current_date}.html'
+        with open(output_file_path, 'w') as f:
+            f.write(output_html)
+        print(f"The data is saved in the file: {output_file_path}")
+
+        # Save the styled DataFrame to an CSV file
+    
         dataframe.to_csv(f'weather_info_{city_name}_{current_date}.csv', index=False)
+        print(f"The data is also saved in the CSV file: 'weather_info_{city_name}_{current_date}.csv'")
+        print("Waiting for 24Hours")
+
         time.sleep(24 * 60 * 60)    

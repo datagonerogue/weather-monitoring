@@ -1,4 +1,5 @@
-numpy==1.19.5
-matplotlib>=3.2.2
+numpy
+matplotlib
 requests
 pandas
+jinja2
