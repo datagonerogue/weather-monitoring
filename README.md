@@ -1,100 +1,93 @@
-# Python Weather Forecast Visualization 
-# ***IN DEVELOPMENT***
+# Weather Data Monitoring and Graphing
 
-<!-- ![Weather Forecast Visualization](example image here) -->
-
-This Python-based weather forecast visualization project aims to provide interactive plots showcasing temperature, precipitation, and wind patterns using the popular Matplotlib library. By leveraging this tool, users can gain insights into the weather forecast data with ease.
+This Python project is designed to collect weather data for the current day, wait for 24 hours, collect data again, and repeat the process. The collected data is then stored in a .csv file for further analysis. Additionally, the project includes a script to visualize the data in a graph using the popular Python library, matplotlib.
 
 ## Table of Contents
 - [Introduction](#introduction)
+- [Features](#features)
+- [Requirements](#requirements)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Features](#features)
+- [Data Collection](#data-collection)
+- [Data Visualization](#data-visualization)
 - [Contributing](#contributing)
 - [License](#license)
 
 ## Introduction
 
-Weather forecasting plays a crucial role in our daily lives, whether it's planning outdoor activities or preparing for potential weather hazards. This project offers a straightforward Python solution to visualize weather forecast data in an interactive and user-friendly manner. The primary objective is to empower users to make informed decisions based on the forecast data.
+Weather Data Monitoring and Graphing is a Python project aimed at collecting weather data at regular intervals, storing it in a .csv file, and visualizing the data in graphical format using matplotlib. The data is collected for the current day and updated every 24 hours to monitor weather trends over time.
+
+## Features
+
+- Automated weather data collection at regular intervals (24 hours).
+- Data storage in a .csv file for easy analysis.
+- Visualization of weather data in a graphical format using matplotlib.
+
+## Requirements
+
+Before running the project, make sure you have the required dependencies installed. You can install them using the following command:
+
+```bash
+pip install -r requirements.txt
+```
 
 ## Installation
 
-To get started with the weather forecast visualization project, follow the steps below:
+1. Clone the repository to your local machine.
 
-1. Clone the repository:
-
-```
-git clone https://github.com/CTM-Giorno/forecast-visualizer.git
-cd forecast-visualizer
+```bash
+git clone https://github.com/your-username/weather-monitoring.git
 ```
 
-2. Set up a virtual environment (optional but recommended):
+2. Change into the project directory.
 
+```bash
+cd weather-monitoring
 ```
-# Windows
-python -m venv venv
-venv\Scripts\activate
 
-# macOS / Linux
+3. Create a virtual environment (optional but recommended).
+
+```bash
 python3 -m venv venv
 source venv/bin/activate
 ```
 
-3. Install the required dependencies:
+4. Install the required dependencies.
 
-```
+```bash
 pip install -r requirements.txt
 ```
 
-4. Obtain an openweather data API key. (Ex. [OpenWeather APIs.](https://openweathermap.org/api))
 ## Usage
 
-Once the project is set up and you have acquired the weather forecast data, follow these steps to visualize the weather patterns:
+The project consists of two main scripts:
 
-1. Run the main Python script:
+1. `data_collection.py`: This script fetches weather data and saves it to a .csv file.
+2. `data_visualization.py`: This script reads the .csv data and generates a graph using matplotlib.
 
+## Data Collection
+
+To collect weather data, run the `data_collection.py` script. It will fetch the weather data for the current day and store it in a .csv file. The data collection process will repeat automatically every 24 hours.     
+
+```bash
+python data_collection.py    
 ```
-python api_to_dataframe.py [YOUR_API_KEY] [LOCATION] [NUMBER_OF_DAYS]
+Note: For continuous data collection, it is recommended to use a remote server or a cloud-based solution to keep the script running uninterrupted even if your local machine is turned off. Running the script on a remote server ensures that the data collection process remains active 24/7, providing consistent updates for the weather data. You can deploy the script on platforms like AWS, Google Cloud, or a virtual private server (VPS) for this purpose. Additionally, consider setting up scheduled execution or utilizing serverless architectures for efficient and automated data collection.
+
+## Data Visualization
+
+To visualize the collected weather data, run the `data_visualization.py` script. It will read the .csv file and generate a graph displaying the weather trends over time.
+
+```bash
+python data_visualization.py
 ```
-    
-2. After processing the data from the open weather, The data will be saved on a .csv gile while on the working directory.
-
-3. The code will pause for a day. After 24 Hours it will ping the API again and repeat the step 3.
-
-## Features
-
-- **Interactive Visualization**: The project offers interactive plots, allowing users to explore weather forecast data conveniently.
-
-- **Temperature Plot**: Visualize temperature patterns over time, helping users understand temperature fluctuations.
-
-### Upcomimng Features
-
-- **Precipitation Plot**: Understand precipitation levels and patterns with an easy-to-read precipitation plot.
-
-- **Wind Pattern Plot**: The wind pattern plot shows the direction and intensity of the wind, providing insights into weather conditions.
-
-- **Customization**: Users can customize the plots based on their preferences and requirements.
 
 ## Contributing
 
-Contributions to this weather forecast visualization project are welcome! If you want to enhance the functionality, fix bugs, or add new features, follow these steps:
+Contributions to this project are welcome! If you find any issues or want to add new features, feel free to open an issue or submit a pull request.
 
-1. Fork the repository.
-
-2. Create a new branch with a descriptive name.
-
-3. Make your changes and commit them.
-
-4. Push the changes to your fork.
-
-5. Submit a pull request, explaining your changes in detail.
-
-We appreciate your contributions to making this project better.
+When contributing, please adhere to the existing code style and ensure that your changes do not break the existing functionality.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-Happy weather forecasting and visualization! If you encounter any issues or have suggestions, feel free to create an issue in the repository. Enjoy exploring the weather data with our interactive plots!
+This project is licensed under the [GNU General Public License v3.0](LICENSE).
