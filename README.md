@@ -54,7 +54,7 @@ Once the project is set up and you have acquired the weather forecast data, foll
 1. Run the main Python script:
 
 ```
-python api_to_dataframe.py
+python api_to_dataframe.py [YOUR_API_KEY] [LOCATION] [NUMBER_OF_DAYS]
 ```
 
 2. The script will prompt you to input the API key and Location for the forcast.
