@@ -67,8 +67,7 @@ if __name__ == "__main__":
         dataframe.to_csv(f'weather_info{current_date}.csv', index=False)
         print(f'''
         --------------------------------------------------------
-        {dataframe.style.set_properties(**{'text-align': 'left'})
-}
+        {dataframe}
         --------------------------------------------------------
         ''')
 
