@@ -86,6 +86,12 @@ Contributions to this project are welcome! If you find any issues or want to add
 
 When contributing, please adhere to the existing code style and ensure that your changes do not break the existing functionality.
 
+
+## Authors
+
+- [@datagonerogue](https://www.github.com/datagonerogue)
+
+
 ## License
 
 This project is licensed under the [GNU General Public License v3.0](LICENSE).
